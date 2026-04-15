@@ -1,18 +1,21 @@
-import { currentUser, mockProducts } from '../../data/mockData';
-import { Link, useNavigate } from 'react-router';
+'use client';
+
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Eye, Trash2, CheckCircle, XCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useEffect } from 'react';
 import { toast } from 'sonner';
+import { currentUser, mockProducts } from '../../data/mockData';
 
 export function AdminProducts() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
     if (currentUser.role !== 'admin') {
-      navigate('/');
+      router.replace('/');
     }
-  }, [navigate]);
+  }, [router]);
 
   const handleApprove = (productId: string, productName: string) => {
     toast.success('Đã duyệt sản phẩm', { description: productName });
@@ -125,7 +128,7 @@ export function AdminProducts() {
                     <td className="px-6 py-4">
                       <div className="flex items-center justify-end gap-2">
                         <Link
-                          to={`/products/${product.id}`}
+                          href={`/products/${product.id}`}
                           className="p-2 hover:bg-sand/50 rounded-lg transition-colors"
                           title="Xem"
                         >
@@ -211,7 +214,7 @@ export function AdminProducts() {
 
                 <div className="flex gap-2">
                   <Link
-                    to={`/products/${product.id}`}
+                    href={`/products/${product.id}`}
                     className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-sand/50 transition-colors text-sm"
                   >
                     <Eye className="w-4 h-4" />

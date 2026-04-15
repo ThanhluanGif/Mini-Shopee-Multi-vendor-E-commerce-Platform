@@ -1,18 +1,20 @@
-import { currentUser, mockUsers } from '../../data/mockData';
-import { useNavigate } from 'react-router';
+'use client';
+
+import { useRouter } from 'next/navigation';
 import { Shield, Store, User, Ban, CheckCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useEffect } from 'react';
 import { toast } from 'sonner';
+import { currentUser, mockUsers } from '../../data/mockData';
 
 export function AdminUsers() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
     if (currentUser.role !== 'admin') {
-      navigate('/');
+      router.replace('/');
     }
-  }, [navigate]);
+  }, [router]);
 
   const getRoleIcon = (role: string) => {
     switch (role) {

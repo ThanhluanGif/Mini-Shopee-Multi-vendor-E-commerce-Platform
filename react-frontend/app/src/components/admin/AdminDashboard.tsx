@@ -1,17 +1,20 @@
-import { currentUser, mockUsers, mockProducts, mockOrders } from '../../data/mockData';
-import { Link, useNavigate } from 'react-router';
+'use client';
+
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Users, Package, ShoppingBag, DollarSign, TrendingUp, Activity } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useEffect } from 'react';
+import { currentUser, mockUsers, mockProducts, mockOrders } from '../../data/mockData';
 
 export function AdminDashboard() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
     if (currentUser.role !== 'admin') {
-      navigate('/');
+      router.replace('/');
     }
-  }, [navigate]);
+  }, [router]);
 
   const totalUsers = mockUsers.length;
   const totalProducts = mockProducts.length;
@@ -78,7 +81,7 @@ export function AdminDashboard() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
             >
-              <Link to={stat.link} className="block">
+              <Link href={stat.link} className="block">
                 <div className="bg-white rounded-xl shadow p-6 hover:shadow-lg transition-all">
                   <div className="flex items-start justify-between mb-4">
                     <div className={`w-12 h-12 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center`}>
@@ -145,7 +148,7 @@ export function AdminDashboard() {
 
             <div className="space-y-4">
               <Link
-                to="/admin/users"
+                href="/admin/users"
                 className="flex items-center gap-4 p-4 bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl hover:shadow-lg transition-all group"
               >
                 <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -158,7 +161,7 @@ export function AdminDashboard() {
               </Link>
 
               <Link
-                to="/admin/products"
+                href="/admin/products"
                 className="flex items-center gap-4 p-4 bg-gradient-to-br from-secondary/5 to-secondary/10 rounded-xl hover:shadow-lg transition-all group"
               >
                 <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -171,7 +174,7 @@ export function AdminDashboard() {
               </Link>
 
               <Link
-                to="/products"
+                href="/products"
                 className="flex items-center gap-4 p-4 bg-gradient-to-br from-gold/10 to-gold/20 rounded-xl hover:shadow-lg transition-all group"
               >
                 <div className="w-12 h-12 bg-gold rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
