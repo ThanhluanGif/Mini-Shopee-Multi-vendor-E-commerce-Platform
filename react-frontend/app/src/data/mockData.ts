@@ -42,11 +42,11 @@ export interface Order {
 
 // Mock current user (can be changed for testing different roles)
 export let currentUser: User = {
-  id: '1',
+  id: '4',
   name: 'Nguyễn Văn An',
-  email: 'buyer@example.com',
-  role: 'buyer',
-  avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=An'
+  email: 'admin@example.com',
+  role: 'admin',
+  avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Duy'
 };
 
 export const setCurrentUser = (user: User) => {
