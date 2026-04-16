@@ -77,7 +77,7 @@ export function AdminDashboard() {
           {stats.map((stat, idx) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
             >
@@ -103,7 +103,7 @@ export function AdminDashboard() {
           {/* Recent Activity */}
           <motion.div
             className="bg-white rounded-xl shadow p-6"
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
@@ -119,7 +119,7 @@ export function AdminDashboard() {
                 <motion.div
                   key={idx}
                   className="flex items-start gap-3 pb-4 border-b border-border last:border-0"
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={false}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 + idx * 0.1 }}
                 >
@@ -140,7 +140,7 @@ export function AdminDashboard() {
           {/* Quick Actions */}
           <motion.div
             className="bg-white rounded-xl shadow p-6"
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
@@ -192,7 +192,7 @@ export function AdminDashboard() {
         {/* Top Sellers */}
         <motion.div
           className="bg-white rounded-xl shadow p-6 mt-6"
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
@@ -208,7 +208,7 @@ export function AdminDashboard() {
                 <motion.div
                   key={seller.id}
                   className="p-4 bg-sand/10 rounded-xl"
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={false}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.7 + idx * 0.1 }}
                 >

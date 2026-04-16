@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import RouterShell from './src/RouterShell';
 
 export default function Page() {
-  redirect("/admin");
+  return <RouterShell />;
 }

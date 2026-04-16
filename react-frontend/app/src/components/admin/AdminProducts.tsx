@@ -49,7 +49,7 @@ export function AdminProducts() {
             <motion.div
               key={stat.label}
               className={`bg-gradient-to-br ${stat.color} rounded-xl p-6`}
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
             >
@@ -83,7 +83,7 @@ export function AdminProducts() {
                   <motion.tr
                     key={product.id}
                     className="border-b border-border last:border-0 hover:bg-sand/10 transition-colors"
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={false}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
                   >
@@ -169,7 +169,7 @@ export function AdminProducts() {
               <motion.div
                 key={product.id}
                 className="p-4"
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.05 }}
               >
