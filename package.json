@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "dev:frontend": "npm --prefix react-frontend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "build:frontend": "npm --prefix react-frontend run build",
+    "start:frontend": "npm --prefix react-frontend run start",
+    "seed:backend": "npm --prefix backend run seed"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.4.1"
+  }
+}
